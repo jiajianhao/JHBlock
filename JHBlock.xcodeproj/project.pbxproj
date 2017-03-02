@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8418CB1A1E6808EB0082F911 /* CalculatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418CB101E6808EB0082F911 /* CalculatorManager.m */; };
+		8418CB1B1E6808EB0082F911 /* MyStringManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418CB121E6808EB0082F911 /* MyStringManager.m */; };
+		8418CB1C1E6808EB0082F911 /* ParaBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418CB161E6808EB0082F911 /* ParaBlockViewController.m */; };
+		8418CB1D1E6808EB0082F911 /* ParaBlockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8418CB171E6808EB0082F911 /* ParaBlockViewController.xib */; };
+		8418CB1E1E6808EB0082F911 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418CB191E6808EB0082F911 /* ViewController.m */; };
+		8418CB211E6812D70082F911 /* MyOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418CB201E6812D70082F911 /* MyOperation.m */; };
 		845426F71E569F00000F481D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 845426F61E569F00000F481D /* main.m */; };
 		845426FA1E569F00000F481D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 845426F91E569F00000F481D /* AppDelegate.m */; };
-		845426FD1E569F00000F481D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845426FC1E569F00000F481D /* ViewController.m */; };
 		845427001E569F00000F481D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845426FE1E569F00000F481D /* Main.storyboard */; };
 		845427021E569F00000F481D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845427011E569F00000F481D /* Assets.xcassets */; };
 		845427051E569F00000F481D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845427031E569F00000F481D /* LaunchScreen.storyboard */; };
 		845427101E569F00000F481D /* JHBlockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454270F1E569F00000F481D /* JHBlockTests.m */; };
 		8454271B1E569F00000F481D /* JHBlockUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454271A1E569F00000F481D /* JHBlockUITests.m */; };
-		8454272C1E56A2EB000F481D /* CalculatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 845427291E56A2EB000F481D /* CalculatorManager.m */; };
-		8454272D1E56A2EB000F481D /* MyStringManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454272B1E56A2EB000F481D /* MyStringManager.m */; };
-		845427311E56A31D000F481D /* ParaBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454272F1E56A31D000F481D /* ParaBlockViewController.m */; };
-		845427321E56A31D000F481D /* ParaBlockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845427301E56A31D000F481D /* ParaBlockViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,12 +40,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8418CB0F1E6808EB0082F911 /* CalculatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorManager.h; sourceTree = "<group>"; };
+		8418CB101E6808EB0082F911 /* CalculatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorManager.m; sourceTree = "<group>"; };
+		8418CB111E6808EB0082F911 /* MyStringManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStringManager.h; sourceTree = "<group>"; };
+		8418CB121E6808EB0082F911 /* MyStringManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStringManager.m; sourceTree = "<group>"; };
+		8418CB151E6808EB0082F911 /* ParaBlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParaBlockViewController.h; sourceTree = "<group>"; };
+		8418CB161E6808EB0082F911 /* ParaBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParaBlockViewController.m; sourceTree = "<group>"; };
+		8418CB171E6808EB0082F911 /* ParaBlockViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParaBlockViewController.xib; sourceTree = "<group>"; };
+		8418CB181E6808EB0082F911 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8418CB191E6808EB0082F911 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8418CB1F1E6812D70082F911 /* MyOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOperation.h; sourceTree = "<group>"; };
+		8418CB201E6812D70082F911 /* MyOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOperation.m; sourceTree = "<group>"; };
 		845426F21E569F00000F481D /* JHBlock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JHBlock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845426F61E569F00000F481D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		845426F81E569F00000F481D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		845426F91E569F00000F481D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		845426FB1E569F00000F481D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		845426FC1E569F00000F481D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		845426FF1E569F00000F481D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		845427011E569F00000F481D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		845427041E569F00000F481D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,13 +65,6 @@
 		845427161E569F00000F481D /* JHBlockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JHBlockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8454271A1E569F00000F481D /* JHBlockUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHBlockUITests.m; sourceTree = "<group>"; };
 		8454271C1E569F00000F481D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		845427281E56A2EB000F481D /* CalculatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorManager.h; sourceTree = "<group>"; };
-		845427291E56A2EB000F481D /* CalculatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorManager.m; sourceTree = "<group>"; };
-		8454272A1E56A2EB000F481D /* MyStringManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStringManager.h; sourceTree = "<group>"; };
-		8454272B1E56A2EB000F481D /* MyStringManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStringManager.m; sourceTree = "<group>"; };
-		8454272E1E56A31D000F481D /* ParaBlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParaBlockViewController.h; sourceTree = "<group>"; };
-		8454272F1E56A31D000F481D /* ParaBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParaBlockViewController.m; sourceTree = "<group>"; };
-		845427301E56A31D000F481D /* ParaBlockViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParaBlockViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8418CB0E1E6808EB0082F911 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8418CB0F1E6808EB0082F911 /* CalculatorManager.h */,
+				8418CB101E6808EB0082F911 /* CalculatorManager.m */,
+				8418CB111E6808EB0082F911 /* MyStringManager.h */,
+				8418CB121E6808EB0082F911 /* MyStringManager.m */,
+				8418CB1F1E6812D70082F911 /* MyOperation.h */,
+				8418CB201E6812D70082F911 /* MyOperation.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		8418CB131E6808EB0082F911 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8418CB141E6808EB0082F911 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8418CB151E6808EB0082F911 /* ParaBlockViewController.h */,
+				8418CB161E6808EB0082F911 /* ParaBlockViewController.m */,
+				8418CB171E6808EB0082F911 /* ParaBlockViewController.xib */,
+				8418CB181E6808EB0082F911 /* ViewController.h */,
+				8418CB191E6808EB0082F911 /* ViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		845426E91E569F00000F481D = {
 			isa = PBXGroup;
 			children = (
@@ -112,17 +147,11 @@
 		845426F41E569F00000F481D /* JHBlock */ = {
 			isa = PBXGroup;
 			children = (
+				8418CB0E1E6808EB0082F911 /* Manager */,
+				8418CB131E6808EB0082F911 /* Model */,
+				8418CB141E6808EB0082F911 /* ViewControllers */,
 				845426F81E569F00000F481D /* AppDelegate.h */,
 				845426F91E569F00000F481D /* AppDelegate.m */,
-				845426FB1E569F00000F481D /* ViewController.h */,
-				845426FC1E569F00000F481D /* ViewController.m */,
-				8454272E1E56A31D000F481D /* ParaBlockViewController.h */,
-				8454272F1E56A31D000F481D /* ParaBlockViewController.m */,
-				845427301E56A31D000F481D /* ParaBlockViewController.xib */,
-				845427281E56A2EB000F481D /* CalculatorManager.h */,
-				845427291E56A2EB000F481D /* CalculatorManager.m */,
-				8454272A1E56A2EB000F481D /* MyStringManager.h */,
-				8454272B1E56A2EB000F481D /* MyStringManager.m */,
 				845426FE1E569F00000F481D /* Main.storyboard */,
 				845427011E569F00000F481D /* Assets.xcassets */,
 				845427031E569F00000F481D /* LaunchScreen.storyboard */,
@@ -269,7 +298,7 @@
 			files = (
 				845427051E569F00000F481D /* LaunchScreen.storyboard in Resources */,
 				845427021E569F00000F481D /* Assets.xcassets in Resources */,
-				845427321E56A31D000F481D /* ParaBlockViewController.xib in Resources */,
+				8418CB1D1E6808EB0082F911 /* ParaBlockViewController.xib in Resources */,
 				845427001E569F00000F481D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,12 +324,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				845427311E56A31D000F481D /* ParaBlockViewController.m in Sources */,
-				845426FD1E569F00000F481D /* ViewController.m in Sources */,
+				8418CB1E1E6808EB0082F911 /* ViewController.m in Sources */,
+				8418CB1B1E6808EB0082F911 /* MyStringManager.m in Sources */,
 				845426FA1E569F00000F481D /* AppDelegate.m in Sources */,
+				8418CB1C1E6808EB0082F911 /* ParaBlockViewController.m in Sources */,
+				8418CB211E6812D70082F911 /* MyOperation.m in Sources */,
 				845426F71E569F00000F481D /* main.m in Sources */,
-				8454272C1E56A2EB000F481D /* CalculatorManager.m in Sources */,
-				8454272D1E56A2EB000F481D /* MyStringManager.m in Sources */,
+				8418CB1A1E6808EB0082F911 /* CalculatorManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +568,7 @@
 				845427211E569F00000F481D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		845427221E569F00000F481D /* Build configuration list for PBXNativeTarget "JHBlockTests" */ = {
 			isa = XCConfigurationList;
@@ -546,6 +577,7 @@
 				845427241E569F00000F481D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		845427251E569F00000F481D /* Build configuration list for PBXNativeTarget "JHBlockUITests" */ = {
 			isa = XCConfigurationList;
@@ -554,6 +586,7 @@
 				845427271E569F00000F481D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
