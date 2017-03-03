@@ -81,7 +81,7 @@
             NSLog(@"%@",dic);
             NSLog(@"ok1");
             dispatch_group_leave(group);
-            
+              
         }];
         
         [task resume];
