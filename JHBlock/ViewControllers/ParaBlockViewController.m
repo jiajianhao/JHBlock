@@ -10,7 +10,12 @@
 #import "MyStringManager.h"
 #import "CalculatorManager.h"
 @interface ParaBlockViewController (){
- }
+    NSString *string1;
+    NSString *string2;
+    NSString *string3;
+    NSString *string4;
+    
+}
 @property(nonatomic,assign)BOOL runloop;
 @end
 
@@ -24,14 +29,14 @@
     manager.mySpliceString(@"你好").mySpliceString(@"Hello");
     
     ////////block作为参数
-//    [self getBlock:^(NSDictionary*json){
-//        NSLog(@"%@",json);
-//    }andPostDataByURL:@"https://api.douban.com/v2/book/1220560"];
+    //    [self getBlock:^(NSDictionary*json){
+    //        NSLog(@"%@",json);
+    //    }andPostDataByURL:@"https://api.douban.com/v2/book/1220560"];
     
-//    [self groupQueueTest];
-//    [self serialQueueTest];
-//    [self concurrentQueueTest];
-//    [self useRunLoop];
+    //    [self groupQueueTest];
+    //    [self serialQueueTest];
+    //    [self concurrentQueueTest];
+    //    [self useRunLoop];
     [self useGCD];
     
 }
@@ -63,14 +68,16 @@
 }
 -(void)useGCD{
     dispatch_group_t group = dispatch_group_create();
-    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
     dispatch_queue_t queue1 = dispatch_get_global_queue(0, 0);
+    dispatch_queue_t queue2 = dispatch_get_global_queue(0, 0);
+    dispatch_queue_t queue3 = dispatch_get_global_queue(0, 0);
+    dispatch_queue_t queue4 = dispatch_get_global_queue(0, 0);
     
-    dispatch_group_async(group, queue , ^{
+    dispatch_group_async(group, queue1 , ^{
         dispatch_group_enter(group);
-        NSLog(@"queue");
-
-//        __weak typeof (self) weakself =self;
+        NSLog(@"queue1");
+        
+        //        __weak typeof (self) weakself =self;
         NSURL *url = [NSURL URLWithString:@"https://api.douban.com/v2/book/1220560"];
         
         NSURLSession *session = [NSURLSession sharedSession];
@@ -78,19 +85,20 @@
         NSURLSessionDataTask *task =[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
             NSError *error1;
             NSDictionary *dic =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error1];
-            NSLog(@"%@",dic);
+            string1 = [dic objectForKey:@"price"];
+            NSLog(@"%@",[dic objectForKey:@"price"]);
             NSLog(@"ok1");
             dispatch_group_leave(group);
-              
+            
         }];
         
         [task resume];
-       
+        
     });
-    dispatch_group_async(group, queue1 , ^{
+    dispatch_group_async(group, queue2 , ^{
         dispatch_group_enter(group);
-        NSLog(@"queue1");
-
+        NSLog(@"queue2");
+        
         //        __weak typeof (self) weakself =self;
         NSURL *url = [NSURL URLWithString:@"https://api.douban.com/v2/book/1220561"];
         
@@ -99,7 +107,8 @@
         NSURLSessionDataTask *task =[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
             NSError *error1;
             NSDictionary *dic =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error1];
-            NSLog(@"%@",dic);
+            string2 = [dic objectForKey:@"price"];
+            NSLog(@"%@",[dic objectForKey:@"price"]);
             NSLog(@"ok2");
             dispatch_group_leave(group);
             
@@ -108,10 +117,61 @@
         [task resume];
         
     });
-
+    dispatch_group_async(group, queue3 , ^{
+        dispatch_group_enter(group);
+        NSLog(@"queue3");
+        
+        //        __weak typeof (self) weakself =self;
+        NSURL *url = [NSURL URLWithString:@"https://api.douban.com/v2/book/1220562"];
+        
+        NSURLSession *session = [NSURLSession sharedSession];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:2.0];
+        NSURLSessionDataTask *task =[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
+            NSError *error1;
+            NSDictionary *dic =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error1];
+            string3 = [dic objectForKey:@"price"];
+            NSLog(@"%@",[dic objectForKey:@"price"]);
+            NSLog(@"ok3");
+            dispatch_group_leave(group);
+            
+        }];
+        
+        [task resume];
+        
+    });
+    
+    dispatch_group_async(group, queue4 , ^{
+        dispatch_group_enter(group);
+        NSLog(@"queue4");
+        
+        //        __weak typeof (self) weakself =self;
+        NSURL *url = [NSURL URLWithString:@"https://api.douban.com/v2/book/1220563"];
+        
+        NSURLSession *session = [NSURLSession sharedSession];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:2.0];
+        NSURLSessionDataTask *task =[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
+            NSError *error1;
+            NSDictionary *dic =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error1];
+            string4 = [dic objectForKey:@"price"];
+            NSLog(@"%@",[dic objectForKey:@"price"]);
+            NSLog(@"ok4");
+            dispatch_group_leave(group);
+            
+        }];
+        
+        [task resume];
+        
+    });
+    
+    
     
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
         NSLog(@"okkkkkkkk");
+        NSLog(@"aaaaaaaaa");
+        NSString *stringOK = [NSString stringWithFormat:@"*************\n%@,\n%@,\n%@,\n%@,\n************",string1,string2,string3,string4];
+        NSLog(@"%@",stringOK);
+        
+        
     });
 }
 
@@ -122,13 +182,13 @@
     queue.maxConcurrentOperationCount = 1;
     // 创建一个A操作
     NSBlockOperation *operationA = [NSBlockOperation blockOperationWithBlock:^{
-//        for (int i = 0; i<10; i++) {
-//            NSLog(@"i的值是:%d",i);
-//        }
-//        NSURL *url = [NSURL URLWithString:urldata];
+        //        for (int i = 0; i<10; i++) {
+        //            NSLog(@"i的值是:%d",i);
+        //        }
+        //        NSURL *url = [NSURL URLWithString:urldata];
         
         NSLog(@"i的值是:%d",1);
-
+        
         NSURL *url = [NSURL URLWithString:@"https://api.douban.com/v2/book/1220560"];
         
         NSURLSession *session = [NSURLSession sharedSession];
@@ -143,34 +203,34 @@
         }];
         
         [task resume];
-
+        
     }];
-     // 创建一个B操作
-     NSBlockOperation *operationB = [NSBlockOperation blockOperationWithBlock:^{
-//         for (int j = 0; j<20; j++) {
-//             NSLog(@"j的值是:%d",j);
-//         }
-         NSLog(@"i的值是:%d",2);
-         NSURL *url = [NSURL URLWithString:@"https://api.douban.com/v2/book/1220561"];
-         
-         NSURLSession *session = [NSURLSession sharedSession];
-         NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:2.0];
-         
-         NSURLSessionDataTask *task =[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
-             NSError *error1;
-             NSDictionary *dic =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error1];
-             NSLog(@"%@",dic);
-             
-             //        return dic;
-         }];
-         
-         [task resume];
-
+    // 创建一个B操作
+    NSBlockOperation *operationB = [NSBlockOperation blockOperationWithBlock:^{
+        //         for (int j = 0; j<20; j++) {
+        //             NSLog(@"j的值是:%d",j);
+        //         }
+        NSLog(@"i的值是:%d",2);
+        NSURL *url = [NSURL URLWithString:@"https://api.douban.com/v2/book/1220561"];
+        
+        NSURLSession *session = [NSURLSession sharedSession];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:2.0];
+        
+        NSURLSessionDataTask *task =[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error){
+            NSError *error1;
+            NSDictionary *dic =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error1];
+            NSLog(@"%@",dic);
+            
+            //        return dic;
+        }];
+        
+        [task resume];
+        
     }];
     // 添加依赖 B要在A打印完在进行打印 所以是B依赖于A 那么只需要添加如下代码即可完成
     [operationB addDependency:operationA];
     // 分别加入到队列中
-
+    
     [queue addOperation:operationA];
     [queue addOperation:operationB];
 }
@@ -197,120 +257,120 @@
     
 }
 
-     -(void) groupQueueTest
+-(void) groupQueueTest
+
+{
     
-    {
+    //获取concurrent queue
+    
+    //dispatch_queue_t aQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_queue_t aQueue = dispatch_queue_create("shunxun", DISPATCH_QUEUE_SERIAL);
+    
+    //创建1个queue group
+    
+    dispatch_group_t queueGroup = dispatch_group_create();
+    
+    //任务1
+    
+    dispatch_group_async(queueGroup, aQueue, ^{
         
-        //获取concurrent queue
+        NSLog(@"task 1 begin.");
         
-        //dispatch_queue_t aQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
         
-        dispatch_queue_t aQueue = dispatch_queue_create("shunxun", DISPATCH_QUEUE_SERIAL);
+        NSLog(@"task 1 end.");
         
-        //创建1个queue group
+    });
+    
+    //任务2
+    
+    dispatch_group_async(queueGroup, aQueue, ^{
         
-        dispatch_group_t queueGroup = dispatch_group_create();
+        NSLog(@"task 2 begin.");
         
-        //任务1
         
-        dispatch_group_async(queueGroup, aQueue, ^{
-            
-            NSLog(@"task 1 begin.");
-            
-            
-            NSLog(@"task 1 end.");
-            
-        });
         
-        //任务2
+        NSLog(@"task 2 end.");
         
-        dispatch_group_async(queueGroup, aQueue, ^{
-            
-            NSLog(@"task 2 begin.");
-            
-            
-            
-            NSLog(@"task 2 end.");
-            
-        });
+    });
+    
+    //任务3
+    
+    dispatch_group_async(queueGroup, aQueue, ^{
         
-        //任务3
+        NSLog(@"task 3 begin.");
         
-        dispatch_group_async(queueGroup, aQueue, ^{
-            
-            NSLog(@"task 3 begin.");
-            
-            
-            
-            NSLog(@"task 3 end.");
-            
-        });
         
-        NSLog(@"wait task 1,2,3.");
         
-        //等待组内任务全部完成
+        NSLog(@"task 3 end.");
         
-        dispatch_group_wait(queueGroup, DISPATCH_TIME_FOREVER);
+    });
+    
+    NSLog(@"wait task 1,2,3.");
+    
+    //等待组内任务全部完成
+    
+    dispatch_group_wait(queueGroup, DISPATCH_TIME_FOREVER);
+    
+    NSLog(@"task 1,2,3 finished.");
+    
+    //释放组
+    
+    //        dispatch_release(queueGroup);
+    
+    //重新创建组
+    
+    queueGroup = dispatch_group_create();
+    
+    //任务4
+    
+    dispatch_group_async(queueGroup, aQueue, ^{
         
-        NSLog(@"task 1,2,3 finished.");
+        NSLog(@"task 4 begin.");
         
-        //释放组
         
-//        dispatch_release(queueGroup);
         
-        //重新创建组
+        NSLog(@"task 4 end.");
         
-        queueGroup = dispatch_group_create();
+    });
+    
+    //任务5
+    
+    dispatch_group_async(queueGroup, aQueue, ^{
         
-        //任务4
+        NSLog(@"task 5 begin.");
         
-        dispatch_group_async(queueGroup, aQueue, ^{
-            
-            NSLog(@"task 4 begin.");
-            
-            
-            
-            NSLog(@"task 4 end.");
-            
-        });
         
-        //任务5
         
-        dispatch_group_async(queueGroup, aQueue, ^{
-            
-            NSLog(@"task 5 begin.");
-            
-            
-            
-            NSLog(@"task 5 end.");
-            
-        });
+        NSLog(@"task 5 end.");
         
-        //任务6
+    });
+    
+    //任务6
+    
+    dispatch_group_async(queueGroup, aQueue, ^{
         
-        dispatch_group_async(queueGroup, aQueue, ^{
-            
-            NSLog(@"task 6 begin.");
-            
-            
-            
-            NSLog(@"task 6 end.");
-            
-        });
+        NSLog(@"task 6 begin.");
         
-        NSLog(@"wait task 4,5,6.");
         
-        //等待组内任务全部完成
         
-        dispatch_group_wait(queueGroup, DISPATCH_TIME_FOREVER);
+        NSLog(@"task 6 end.");
         
-        NSLog(@"task 4,5,6 finished.");
-        
-        //释放组
-        
-//        dispatch_release(queueGroup);
-        
- }
+    });
+    
+    NSLog(@"wait task 4,5,6.");
+    
+    //等待组内任务全部完成
+    
+    dispatch_group_wait(queueGroup, DISPATCH_TIME_FOREVER);
+    
+    NSLog(@"task 4,5,6 finished.");
+    
+    //释放组
+    
+    //        dispatch_release(queueGroup);
+    
+}
 
 -(void) serialQueueTest
 
@@ -360,7 +420,7 @@
     
     
     
-//    dispatch_release(aQueue);
+    //    dispatch_release(aQueue);
     
     //另一个串行队列
     
@@ -406,7 +466,7 @@
     
     
     
-//    dispatch_release(aQueue2);
+    //    dispatch_release(aQueue2);
     
 }
 -(void)jhConcurrentQueueTest{
@@ -427,7 +487,7 @@
     });
     ////////////////////
     dispatch_semaphore_wait(jh_sema, DISPATCH_TIME_FOREVER);
-
+    
     dispatch_async(aQueue, ^{
         NSLog(@"task 2 begin.");
         
@@ -675,7 +735,7 @@
         
     });
     
-//    dispatch_release(aQueue);
+    //    dispatch_release(aQueue);
     
 }
 - (void)didReceiveMemoryWarning {
@@ -684,13 +744,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
